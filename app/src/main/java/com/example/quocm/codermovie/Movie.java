@@ -21,6 +21,9 @@ public class Movie {
     @SerializedName("backdrop_path")
     private String backdropPath;
 
+    @SerializedName("vote_average")
+    private float voteAverage;
+
     public long getId() {
         return id;
     }
@@ -41,5 +44,14 @@ public class Movie {
         return POST_FIX + backdropPath;
     }
 
+    public float getVoteAverage() {
+        return voteAverage;
+    }
 
+    public int getType(float avg) {
+        if (avg >= 7){
+            return 1;
+        }
+        else return 0;
+    }
 }
