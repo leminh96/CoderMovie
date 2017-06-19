@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipeContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/lvMovies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.quocm.codermovie.MainActivity" />
+</android.support.v4.widget.SwipeRefreshLayout>
