@@ -1,8 +1,11 @@
 package com.example.quocm.codermovie;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -37,6 +40,21 @@ public class MainActivity extends AppCompatActivity {
                 fetchData();
             }
         });
+        lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent mIntent = new Intent(MainActivity.this, DetailActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putString("backdrop_path", mMovies.get(position).getBackdropPath());
+                mBundle.putString("release_date", mMovies.get(position).getReleaseDate());
+                mBundle.putString("title", mMovies.get(position).getTitle());
+                mBundle.putString("overview", mMovies.get(position).getOverview());
+                mBundle.putFloat("vote_average", mMovies.get(position).getVoteAverage());
+                mBundle.putLong("id", mMovies.get(position).getId());
+                mIntent.putExtras(mBundle);
+                startActivity(mIntent);
+            }
+        });
     }
 
     private void fetchData() {
@@ -57,4 +75,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

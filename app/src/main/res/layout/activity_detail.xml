@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="@dimen/small_space"
+    tools:context="com.example.quocm.codermovie.DetailActivity">
+
+    <!--Image-->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/ypvTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.youtube.player.YouTubePlayerView>
+
+        <ImageView
+            android:id="@+id/ivCoverDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bg1" />
+
+        <ImageView
+            android:id="@+id/ivPlayIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/play_button" />
+    </FrameLayout>
+
+    <!--Title-->
+    <TextView
+        android:id="@+id/tvTitleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!--Release date-->
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Release date: "
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <!--Rating-->
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="4"
+        android:stepSize="1.0" />
+
+    <!--Overview-->
+    <TextView
+        android:id="@+id/tvOverViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>
